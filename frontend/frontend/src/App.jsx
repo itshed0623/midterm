@@ -11,7 +11,12 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={
+         <Route path='/' element={
+          <div>
+            Hello
+          </div>
+        } ></Route>
+        <Route path='/sample' element={
           <SampleB/>
         } ></Route>
       </Routes>
