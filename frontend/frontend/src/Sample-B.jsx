@@ -86,7 +86,7 @@ export default function SampleB() {
                 <tr>
                   <td>{users.user_id}</td>
                     <td>{users.name}</td>
-                    <td>{users.role}</td>
+                    <td>{users.color}</td>
                     <td className="text-center">
                       <button className="btn btn-sm btn-warning me-2" type='button' onClick={()=> openEditModal()}>Edit</button>
                       <button className="btn btn-sm btn-danger" onClick={()=> handleDelete(users.user_id)}>Delete</button>
