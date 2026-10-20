@@ -1,18 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const mysql = require('mysql2/promise');
+
+const PORT = process.env.PORT || 8080;
 
 const app = express();
-const db = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'backend'
-})
 
-if (db.getConnection()) {
-    console.log('Database connected successfully!')
-}
 
 
 app.use(express.json());
@@ -31,21 +23,11 @@ let fruit = [
     }
 ]
 
-app.get('/api/user', async (req, res) => {
-    const [rows] = await db.query('SELECT * FROM products')
-    res.json(rows);
+app.get('/api/user', (req, res) => {
+    res.json(fruit);
 })
 
-app.post('/api/user', async (req, res) => {
-    console.log(req.body.name);
-    await db.query(`INSERT INTO user (name, role) VALUE ('${req.body.name}', '${req.body.color}')`);
-})
 
-app.delete('/api/user/:id', async (req, res) => {
-    console.log('DELETE FROM user WHERE user_id = ', req.params.id);
-    await db.query('DELETE FROM user WHERE user_id = ?', req.params.id);
-})
-
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log('Server running 8080');
 })   
