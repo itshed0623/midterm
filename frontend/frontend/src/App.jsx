@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/sample' element={
+        <Route path='/' element={
           <SampleB/>
         } ></Route>
       </Routes>
