@@ -7,7 +7,7 @@ export default function SampleB() {
   const [name, setName] = useState([]);
   const [color, setColor] = useState([]);
 
-  const api = 'http://localhost:8080/api/user';
+  const api = 'https://backend-6p17.onrender.com/api/user';
 
     function openEditModal() {
         setIsEditModalOpen(true);
