@@ -2,14 +2,19 @@ import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import BasicCRUD from './BasicCRUD.jsx'
+import SampleB from './Sample-B.jsx'
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <BasicCRUD/>
+      <Routes>
+        <Route path='/sample' element={
+          <SampleB/>
+        } ></Route>
+      </Routes>
     </>
   )
 }
